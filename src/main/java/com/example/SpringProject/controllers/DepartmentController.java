@@ -20,15 +20,20 @@ public class DepartmentController {
     private DepartmentService departmentService;
 
     @RequestMapping(value = "/getAll",
-            method = RequestMethod.POST)
-    public ResponseEntity<Object>  getAllDepartments(){
+            method = RequestMethod.GET)
+    public ResponseEntity<Object> getAllDepartments() {
         return ResponseEntity.ok().body(departmentService.getAllDepartments());
     }
 
-    @RequestMapping(value = "/getById/{departmentId}",
-            method = RequestMethod.POST)
-    public ResponseEntity<Object>  getDepartmentById(
-            @PathVariable(value = "departmentId")Long departmentId){
-        return ResponseEntity.ok().body(departmentService.getDepartmentById(departmentId));
+    @RequestMapping(value = "/getById/{id}",
+            method = RequestMethod.GET)
+    public ResponseEntity<Object> getById(
+            @PathVariable(value = "id") Long id) {
+        return ResponseEntity.ok().body(departmentService.getDepartmentById(id));
+    }
+
+    @RequestMapping(value = "/getByName/{name}", method = RequestMethod.GET)
+    public ResponseEntity<Object> getByName(@PathVariable(value = "name") String name) {
+        return ResponseEntity.ok().body(departmentService.getDepartmentByName(name));
     }
 }

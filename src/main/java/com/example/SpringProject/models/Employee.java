@@ -14,9 +14,8 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String name;
-    @OneToOne
-    private Department department;
+    private String empname;
+    private long departmentid;
     private double salary;
 
 }

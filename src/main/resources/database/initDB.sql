@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS employee
+(
+    id BIGSERIAL PRIMARY KEY ,
+    empname VARCHAR(50) NOT NULL ,
+    departmentId BIGSERIAL NOT NULL ,
+    salary NUMERIC NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS department
+(
+    id BIGSERIAL PRIMARY KEY ,
+    depname VARCHAR(100) NOT NULL
+);

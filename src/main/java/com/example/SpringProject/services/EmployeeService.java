@@ -8,11 +8,13 @@ import java.util.List;
 public interface EmployeeService {
     List<Employee> getAllEmployees();
 
-    Employee getEmployeeById(long employeeId);
+    Employee getById(long employeeId);
 
-    Employee getByEmployeeName(String employeeName);
+    Employee getByName(String employeeName);
 
-    void addNewEmployee(Employee employee);
+    List<Employee> getByDepId(Long departmentId);
 
-    void deleteEmployeeById(long employeeId);
+    List<Employee> getWithSalaryMore(Double minSalary);
+
+    List<Employee> getByFirstName(String fisrtName);
 }
